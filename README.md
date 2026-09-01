@@ -148,51 +148,67 @@ Sorting_Tree_Algorithm/
 ├── Visual_AlgoStudio.spec           # File cấu hình đóng gói PyInstaller
 └── requirements.txt                 # Danh sách thư viện phụ thuộc
 
-## 📂 Cấu Trúc Thư Mục Dự Án
+## ⚙️ Hướng Dẫn Thiết Lập & Chạy Ứng Dụng
 
 ### 1. Yêu cầu hệ thống
-- Hệ điều hành: Windows 10 / 11 (hoặc macOS, Linux).
-- Python: Phiên bản 3.10 trở lên.
+- Hệ điều hành: Windows 10 / 11, macOS hoặc Linux.
+- Python: phiên bản 3.10 trở lên.
+- Khuyến nghị: nên tạo môi trường ảo riêng để quản lý thư viện.
 
-### 2. Cài đặt môi trường & thư viện
-- Mở Terminal / PowerShell tại thư mục dự án và chạy:
-powershell
+### 2. Cài đặt môi trường và thư viện
+Mở Terminal / PowerShell tại thư mục dự án, sau đó chạy:
+
+```powershell
+cd path\to\Sorting_Tree_Algorithm
+python -m venv .venv
+.\.venv\Scripts\activate
 python -m pip install --upgrade pip
 python -m pip install -r requirements.txt
+```
+
+> Nếu bạn đang dùng macOS hoặc Linux, thay lệnh kích hoạt môi trường bằng:
+> `source .venv/bin/activate`
 
 ### 3. Khởi chạy ứng dụng từ mã nguồn
-- Chạy trực tiếp file main.py:
-powershell
+Sau khi cài đặt xong, chạy:
+
+```powershell
 python main.py
+```
 
-### 4. Chạy kiểm thử tự động (Unit Test & Render Test)
-- Kiểm thử logic toàn bộ 42 giải thuật:
-powershell
+Ứng dụng sẽ mở giao diện desktop và bạn có thể bắt đầu tương tác trực tiếp với các thuật toán.
+
+### 4. Chạy kiểm thử tự động
+#### Kiểm thử logic của 42 thuật toán
+```powershell
 python test_algorithms.py
+```
 
-- Kiểm thử hiển thị đồ họa trên Canvas:
-powershell
+#### Kiểm thử hiển thị đồ họa trên Canvas
+```powershell
 python test_canvas_rendering.py
+```
 
-## 📦 Đóng Gói Thành File Cài Đặt / Chạy Trực Tiếp (.EXE)
-Để tạo ra một file .exe độc lập duy nhất có thể copy sang bất kỳ máy tính nào chạy ngay mà không cần cài Python:
+## 📦 Đóng Gói Ứng Dụng Thành File .EXE
+Nếu bạn muốn tạo ra một file thực thi độc lập để chạy ngay trên máy khác mà không cần cài Python, hãy làm theo các bước sau:
 
-### 1.Cài đặt công cụ đóng gói:
-
-powershell
+### Bước 1: Cài đặt công cụ đóng gói
+```powershell
 python -m pip install pyinstaller pillow
+```
 
-### 2.Sinh bộ Icon độ phân giải cao:
-
-powershell
+### Bước 2: Tạo icon độ phân giải cao
+```powershell
 python generate_icon.py
+```
 
-### 3.Tiến hành đóng gói bằng PyInstaller:
-
-powershell
+### Bước 3: Đóng gói bằng PyInstaller
+```powershell
 python -m PyInstaller --clean Visual_AlgoStudio.spec
+```
 
-### 4.Nhận kết quả:
-File thực thi độc lập sẽ được tạo tại: dist/Visual_AlgoStudio.exe.
+### Bước 4: Lấy file kết quả
+- File thực thi sẽ được tạo trong thư mục `dist/Visual_AlgoStudio.exe`.
+- Bạn có thể copy file này ra Desktop hoặc gửi cho người khác và chạy trực tiếp bằng cách nhấp đúp vào file.
 
-Bạn có thể chuyển file này ra Desktop hoặc gửi cho người khác, chỉ cần nhấp đúp là ứng dụng sẽ mở ngay lập tức!
+Đây là phiên bản chạy độc lập, không cần cài đặt Python hay mở Terminal trước khi sử dụng.
